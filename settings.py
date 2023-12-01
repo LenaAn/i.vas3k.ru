@@ -2,7 +2,7 @@ import os.path
 
 DEBUG = True
 UPLOAD_SECRET_CODE = None
-BASE_URI = "https://i.vas3k.ru"
+BASE_URI = "https://i.ulan-club.com"
 IMAGE_EXTENSIONS = ["jpg", "jpeg", "png"]
 VIDEO_EXTENSIONS = ["mp4", "mov", "gif"]
 ALLOWED_EXTENSIONS = IMAGE_EXTENSIONS + VIDEO_EXTENSIONS
