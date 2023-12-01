@@ -10,7 +10,7 @@ ALLOWED_EXTENSIONS = IMAGE_EXTENSIONS + VIDEO_EXTENSIONS
 CURRENT_DIR = os.path.dirname(__file__)
 TEMPLATES_PATH = os.path.join(CURRENT_DIR, "templates")
 
-PSYCOPG_CONNECTION_STRING = "dbname='ivas3kru' user='postgres' host='localhost' password=''"
+PSYCOPG_CONNECTION_STRING = "dbname='vas3k_images' user='vas3k' host='localhost' password='vas3k'"
 
 # to avoid problems due to the large number of files in the directory
 # the file tree is made, divided file name by N characters (default = 2)
