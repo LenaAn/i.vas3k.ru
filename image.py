@@ -27,7 +27,7 @@ def save_full_image(data, extension, file_code, convert_to=None, quality=setting
     image_width = float(image.size[0])
     image_height = float(image.size[1])
     orig_save_size = get_fit_image_size(image_width, image_height, settings.ORIGINAL_IMAGE_MAX_LENGTH)
-    image.thumbnail(orig_save_size, Image.ANTIALIAS)
+    image.thumbnail(orig_save_size, Image.LANCZOS)
 
     if convert_to:
         convert_to = convert_to.strip().lower()

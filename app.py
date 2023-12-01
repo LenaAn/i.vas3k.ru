@@ -161,7 +161,7 @@ def length_fit_media(max_length, filename):
         image_height = float(image.size[1])
         if image_width > max_length or image_height > max_length:
             new_width, new_height = get_fit_image_size(image_width, image_height, max_length)
-            image.thumbnail((new_width, new_height), Image.ANTIALIAS)
+            image.thumbnail((new_width, new_height), Image.LANCZOS)
         image.save(filepath, quality=settings.IMAGE_QUALITY)
 
     return x_accel_response("/images/resize/{}/{}".format(max_length, ok_filepath))
@@ -191,7 +191,7 @@ def square_fit_media(max_length, filename):
         crop_coordinates_y = int(image_height / 2 - image_square / 2)
         image = image.crop((crop_coordinates_x, crop_coordinates_y, crop_coordinates_x + image_square,
                             crop_coordinates_y + image_square))
-        image.thumbnail((max_length, max_length), Image.ANTIALIAS)
+        image.thumbnail((max_length, max_length), Image.LANCZOS)
         image.save(filepath, quality=settings.IMAGE_QUALITY)
 
     return x_accel_response("/images/square/{}/{}".format(max_length, ok_filepath))
@@ -218,7 +218,7 @@ def width_fit_media(max_length, filename):
         image_height = float(image.size[1])
         new_width = int(max_length)
         new_height = int(new_width / image_width * image_height)
-        image.thumbnail((new_width, new_height), Image.ANTIALIAS)
+        image.thumbnail((new_width, new_height), Image.LANCZOS)
         image.save(filepath, quality=settings.IMAGE_QUALITY)
 
     return x_accel_response("/images/width/{}/{}".format(max_length, ok_filepath))
